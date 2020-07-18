@@ -11,9 +11,8 @@ skills_conn = SkillsClassificationConnection()
 
 def test_get_status():
     response = skills_conn.get_status()
-
-    assert response.text == 'OK'
-
+    
+    assert response.json()['data']['healthy'] == True
 
 def test_get_documentation():
     response = skills_conn.get_documentation()
