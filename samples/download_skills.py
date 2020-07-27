@@ -11,6 +11,4 @@ data = conn.get_list_all_skills()
 df = pd.DataFrame(data['data'])
 
 # export
-writer = pd.ExcelWriter("skills_list.xlsx")
-df.to_excel(writer, 'Skills', index = False)
-writer.save()
+writer = df.to_csv("skills_list.csv", index = False)
